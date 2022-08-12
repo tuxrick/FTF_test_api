@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-
+let github = require('./v1/routes/github.js');
+app.use('/api/v1/github', github(router));
 
 app.get('/',(req,res)=>res.send("Hello World"));
 
